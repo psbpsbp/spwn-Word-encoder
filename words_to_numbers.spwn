@@ -1,26 +1,19 @@
 extract $
 
 return {
-    to_string = (a,b,c,d,e,) {
+    to_string: (a,b,c,d,e,) {
         return [a,b,c,d,e,]
-    }
-}
-
-return {
-    to_number = (letter) {
+    },
+    to_number: (letter) {
         let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("")
+        //if alphabet.contains(letter) {
         return alphabet.index(letter) + 1
-    }
-}
-
-return {
-    wto_number = (a,b,c,d,e,) {
+        //}
+    },
+    wto_number: (a,b,c,d,e,) {
         return [to_number(a),to_number(b),to_number(c),to_number(d),to_number(e)]
-    }
-}
-
-return {
-    list_to_numbers = (a,b) {
+    },
+    list_to_numbers: (a,b) {
         let b = b
         let c = 0
         let d = []
