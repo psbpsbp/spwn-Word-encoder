@@ -1,33 +1,24 @@
 return {
-    to_string: (a,b,c,d,e,) {
-        return [a,b,c,d,e,]
-    },
     to_number: (letter) {
         let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("")
-        //if alphabet.contains(letter) {
-        return alphabet.index(letter) + 1
-        //}
+            if alphabet.contains(letter) {
+            return alphabet.index(letter) + 1
+        }
     },
-    wto_number: (a,b,c,d,e,) {
-        return [to_number(a),to_number(b),to_number(c),to_number(d),to_number(e)]
-    },
-    list_to_numbers: (a,b) {
-        let b = b
-        let c = 0
-        let d = []
-        while c < a.length {
-        if c+4 > a.length {
-            break;
-        } else {
-            d.push(to_string(a[c],a[c+1],a[c+2],a[c+3],a[c+4]))
-            c += 6
+    list_to_numbers: (words,let list) {
+        let letter = 0
+        let word = 0
+        list.push([])
+        while letter < words.length {
+            if words[letter] == " " {
+                letter ++
+                word ++
+                list.push([])
+            } else { 
+                list[word].push(to_number(words[letter]))
+                letter ++
+            }
         }
-        }
-        let e = 0
-        while e < d.length {
-            b.push(wto_number(d[e][0],d[e][1],d[e][2],d[e][3],d[e][4]))
-            e ++
-        }
-        return b
+        return list
     }
 }
