@@ -1,5 +1,5 @@
 # spwn-Word-encoder
-encodes 5 letter words on an array encoding letters to numbers from 1-26
+encodes words on an array encoding letters to numbers from 1-26 and 27-52
 # commands:
 
 to_number (arg):
