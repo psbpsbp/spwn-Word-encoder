@@ -1,22 +1,10 @@
 return {
-    to_number: (letter) {
-        let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("")
-            if alphabet.contains(letter) {
-            return alphabet.index(letter) + 1
-        }
-    },
-    list_to_numbers: (words,let list) {
-        let letter = 0
-        let word = 0
+    word_to_list: (word,list) {
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("");let list = [];let word = word.split(" ")
+        for words in 0..word.length {
         list.push([])
-        while letter < words.length {
-            if words[letter] == " " {
-                letter ++
-                word ++
-                list.push([])
-            } else { 
-                list[word].push(to_number(words[letter]))
-                letter ++
+        for letter in 0..word[words].length {
+            list[words].push(letters.index(word[words][letter])+1)
             }
         }
         return list
